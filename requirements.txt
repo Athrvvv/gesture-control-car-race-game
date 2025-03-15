@@ -3,7 +3,7 @@ python-dotenv
 flask-cors
 Flask==3.0.0
 numpy==1.26.4
-opencv-python-headless==4.2.0.32
+opencv-python-headless==4.8.1.78
 mediapipe
 jsonschema==4.21.1
 pandas==2.2.1
