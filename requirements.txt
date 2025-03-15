@@ -1,0 +1,6 @@
+flask
+pymongo
+mediapipe
+opencv-python
+python-dotenv
+flask-cors
