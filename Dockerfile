@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies (including ffmpeg for MediaPipe)
 RUN apt-get update && \
     apt-get install -y ffmpeg && \
     apt-get clean && \
@@ -22,8 +22,8 @@ RUN pip install --upgrade pip && \
 # Copy the application code
 COPY . .
 
-# Expose the port
+# Expose the port for Flask
 EXPOSE 5000
 
-# Run the application
-CMD ["python", "app.py"]
+# Run the application with Gunicorn
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000"]
